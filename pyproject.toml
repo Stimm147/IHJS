@@ -1,0 +1,32 @@
+[project]
+name = "ihjs"
+version = "0.1.0"
+description = "Static Site Generator for Python 3.14+. No HTML/CSS/JS required."
+readme = "README.md"
+authors = [
+    { name = "Michał Sztymelski", email = "michalczewski0@gmail.com" }
+]
+license = {file = "LICENSE"}
+requires-python = ">=3.14"
+dependencies = [
+    "pydantic>=2.10",
+    "typer>=0.15",
+    "jinja2>=3.1",
+    "uvicorn>=0.38.0",
+    "starlette>=0.50.0",
+    "websockets>=15.0.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+ihjs = "ihjs.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.9",
+    "watchfiles>=1.0"
+]
